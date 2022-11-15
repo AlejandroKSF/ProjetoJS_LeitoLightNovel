@@ -5,41 +5,95 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css.css">
-    <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet"/>
-    <title>MANGAQ</title>
-
+    <link href="https://use.fontawesome.com/releases/v5.7.2/css/css.css" rel="stylesheet"/>
+    <title>MangarQ</title>
 </head>
 <body>
-  <div class="grid-container">
-    <div class="menu-icon">
-     <i class="fas fa-bars header__menu"></i>
-   </div>
-    
-   <header class="header">
-     <div class="header__avatar">icone</div>
-   </header>
- 
-   <aside class="sidenav">
-     <div class="sidenav__close-icon">
-       <i class="fas fa-times sidenav__brand-close"></i>
-     </div>
-     <ul class="sidenav__list">
-        <li class="sidenav__list-item"><a href="index.html"> Home</a></li>
-        <li class="sidenav__list-item"><a href="admin.html">Administrador </a> </li>
-       <li class="sidenav__list-item"><a href="leitura.html">Teste</a></li>
-       <li class="sidenav__list-item"><a href="ViewlightNovel.html">Teste</a></li>
-     </ul>
-   </aside>
- 
+    <div class="landingpage">
+      <div class="navbar">
+        <a class="navlogo">MANGAQ</a>
+        <button class="hamburger">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+              <path d="M3 12h18M3 6h18M3 18h18"/>
+            </svg>
+          </button>
+        <div class="navlinkwrap">
+          <span class="navlink selectedlink"><a class="link" href="index.html">Home</a></span>
+          <span class="navlink"><a class="link" href="#">Administrador</a></span>
+        </div>
+      </div>
+      
+      <div class="form">
+        <input type="text" placeholder="Nome" class="inputtext">
 
-   <main class="main">
-    <div class="main-header">
-      <input type="text">
-      <input type="text">
-      <input type="file">
-      <input type="submit">
-    </div> 
-</main>
-</div>
+        <input type="text" placeholder="Informação" class="inputtext">
+
+        <input type="date" >
+
+        <label for='selecao-arquivo' class="arquivo">Selecione um arquivo </label>
+        <input id='selecao-arquivo' type='file'>
+
+        <label for='confirmar' class="botaoconf">Confirmar </label>
+        <input type="submit" id="confirmar" herf="#h1">
+      </div>
+
+      <h1><span class="blue"></span>Light<span class="blue"></span> <span class="yellow">Novel</pan></h1>
+        <h2>Crie ou altere uma novel</h2>
+        
+        <table class="container">
+            <thead>
+                <tr>
+                    <th><h1>Nome</h1></th>
+                    <th><h1>Informação</h1></th>
+                    <th><h1>Data</h1></th>
+                    <th><h1>Arquivo de novel</h1></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Teste</td>
+                    <td>teste</td>
+                    <td>teste</td>
+                    <td>teste</td>
+                </tr>
+                <tr>
+                    <td>teste</td>
+                    <td>teste</td>
+                    <td>teste</td>
+                    <td>teste</td>
+                </tr>
+                <tr>
+                    <td>teste</td>
+                    <td>teste</td>
+                    <td>teste</td>
+                    <td>teste</td>
+                </tr>
+            <tr>
+                    <td>teste</td>
+                    <td>teste</td>
+                    <td>teste</td>
+                    <td>teste</td>
+                </tr>
+            <tr>
+                    <td>teste</td>
+                    <td>teste</td>
+                    <td>teste</td>
+                    <td>teste</td>
+                </tr>
+            <tr>
+                    <td>teste</td>
+                    <td>teste</td>
+                    <td>teste</td>
+                    <td>teste</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="footer2">
+          <div></div>
+          <p>Fatec 2022</p>
+        </div>
+      </div>
+    
 </body>
 </html>
