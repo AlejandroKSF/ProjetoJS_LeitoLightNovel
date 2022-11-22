@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" type="text/css" href="css.css">
-    <link href="https://use.fontawesome.com/releases/v5.7.2/css/css.css" rel="stylesheet"/>
+    <script src="main.js" defer></script>
     <title>MangarQ</title>
 </head>
 <body>
@@ -22,73 +23,51 @@
           <span class="navlink"><a class="link" href="#">Administrador</a></span>
         </div>
       </div>
-      
-      <div class="form">
-        <input type="text" placeholder="Nome" class="inputtext">
-
-        <input type="text" placeholder="Informação" class="inputtext">
-
-        <input type="date" >
-
-        <label for='selecao-arquivo' class="arquivo">Selecione um arquivo </label>
-        <input id='selecao-arquivo' type='file'>
-
-        <label for='confirmar' class="botaoconf">Confirmar </label>
-        <input type="submit" id="confirmar" herf="#h1">
-      </div>
+      <div class="box">
+        <div class="infobox">
+            <button class="infobox-explorebtn selected" id="cadastrarlightNovel">Cadastrar Light Novel</button>
+          </div>
+        </div>
 
       <h1><span class="blue"></span>Light<span class="blue"></span> <span class="yellow">Novel</pan></h1>
         <h2>Crie ou altere uma novel</h2>
         
-        <table class="container">
+        <table class="container" id="tablelightNovel">
             <thead>
                 <tr>
-                    <th><h1>Nome</h1></th>
-                    <th><h1>Informação</h1></th>
-                    <th><h1>Data</h1></th>
-                    <th><h1>Arquivo de novel</h1></th>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Capítulo</th>
+                    <th>Data Lançamento</th>
+                    <th>Texto Novel</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Teste</td>
-                    <td>teste</td>
-                    <td>teste</td>
-                    <td>teste</td>
-                </tr>
-                <tr>
-                    <td>teste</td>
-                    <td>teste</td>
-                    <td>teste</td>
-                    <td>teste</td>
-                </tr>
-                <tr>
-                    <td>teste</td>
-                    <td>teste</td>
-                    <td>teste</td>
-                    <td>teste</td>
-                </tr>
-            <tr>
-                    <td>teste</td>
-                    <td>teste</td>
-                    <td>teste</td>
-                    <td>teste</td>
-                </tr>
-            <tr>
-                    <td>teste</td>
-                    <td>teste</td>
-                    <td>teste</td>
-                    <td>teste</td>
-                </tr>
-            <tr>
-                    <td>teste</td>
-                    <td>teste</td>
-                    <td>teste</td>
-                    <td>teste</td>
-                </tr>
             </tbody>
         </table>
 
+        <!--Modal cadastrar light novel-->
+        <div class="modal" id="modal">
+          <div class="modal-content">
+              <header class="modal-header">
+                  <h2>Novo lightNovel</h2>
+                  <span class="modal-close" id="modalClose">&#10006;</span>
+              </header>
+              <form id="form" class="modal-form">
+                  <input type="text" id="nome" data-index="new" class="modal-field" placeholder="Nome do lightNovel"
+                      required>
+                  <input type="text" id="ano" class="modal-field" placeholder="Ano de Lançamento" required>
+                  <input type="text" id="descricao" class="modal-field" placeholder="Gênero" required>
+                  <input type="text" id="capitulo" class="modal-field" placeholder="Gênero" required>
+                  <input type="text" id="data" class="modal-field" placeholder="Gênero" required>
+                  <input type="text" id="conteudo" class="modal-field" placeholder="Gênero" required>
+              </form>
+              <footer class="modal-footer">
+                  <button id="salvar" class="button green">Salvar</button>
+                  <button id="cancelar" class="button blue">Cancelar</button>
+              </footer>
+          </div>
+      </div>
         <div class="footer2">
           <div></div>
           <p>Fatec 2022</p>
