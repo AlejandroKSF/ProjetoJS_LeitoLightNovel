@@ -668,12 +668,13 @@ h2 a {
   font-weight: normal;
   font-size: 1em;
   box-shadow: 0 2px 2px -2px #0E1119;
+  word-wrap: break-word;
 }
 
 .container {
   text-align: left;
   overflow: hidden;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   display: table;
   padding: 0 0 8em 0;
@@ -796,6 +797,7 @@ h2 a {
 .open-book article *:not(.chapter-title):not(hr):not(dl) {
   margin: 0 auto;
   max-width: 28.125em;
+  word-wrap: break-word;
 }
 
 .open-book article p {
@@ -1051,8 +1053,16 @@ h2 a {
   outline-style: none;
   border-style: none;
   box-shadow: 0 0 2px black;
-  padding: 0 10px;
+  padding: 0px;
   font-size: 1rem;
+}
+
+.modal-Label {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  text-align: left;
 }
 
 .modal-field:focus {
@@ -1086,10 +1096,17 @@ h2 a {
 td.red {
   background-color: red;
   color: white;
+  padding: 2% 0 0 0;
 }
 
 td.red:hover {
   background-color: red;
+}
+
+a {
+  color: white;
+  font-size: medium;
+  text-decoration: none;
 }
 
 @media screen and (max-width: 1500px) {

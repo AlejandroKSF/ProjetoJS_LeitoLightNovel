@@ -29,7 +29,7 @@ const readlightNovel = () => getLocalStorage()
 
 const createlightNovel = (lightNovel) => {
     const dblightNovel = getLocalStorage()
-    dblightNovel.push (lightNovel)
+    dblightNovel.push(lightNovel)
     setLocalStorage(dblightNovel)
 }
 
@@ -51,15 +51,19 @@ const savelightNovel = () => { //Insert de nova lightNovel
         const lightNovel = { //dados cedidos no model
             nome: document.getElementById('nome').value,
             descricao: document.getElementById('descricao').value,
-            capitulo: document.getElementById('capitulo').value,
-            data: document.getElementById('data').value,
-            conteudo: document.getElementById('conteudo').value
+            capa: document.getElementById('capa').value,
+            capitulo: []
         }
-        const index = document.getElementById('nome').dataset.index 
+        const index = document.getElementById('nome').dataset.index
+        const storage = JSON.parse(localStorage.getItem('db_lightNovel'))
+
+
         if (index == 'new') {
-            createlightNovel(lightNovel)
-            updateTable()
-            closeModal()
+            if (storage.filter(function (i, n) { return i.nome === document.getElementById('nome').value }).length == 0) {
+                createlightNovel(lightNovel)
+                updateTable()
+                closeModal()
+            }
         } else {
             updatelightNovel(index, lightNovel)
             updateTable()
@@ -73,10 +77,11 @@ const createRow = (lightNovel, index) => { //cria as linhas da tabela
     newRow.innerHTML = `
         <td onclick="editlightNovel(${index})">${lightNovel.nome}</td>
         <td onclick="editlightNovel(${index})">${lightNovel.descricao}</td>
-        <td onclick="editlightNovel(${index})">${lightNovel.capitulo}</td>
-        <td onclick="editlightNovel(${index})">${lightNovel.data}</td>
-        <td onclick="editlightNovel(${index})">${lightNovel.conteudo}</td>
         <td class="red">
+        <a type="button" class="button green" id="edit-${index}">Adicionar Capítulo</a>
+        </td>
+        <td class="red">
+        
         <a type="button" class="infobox-explorebtn selected" id="delete-${index}" >Excluir</a>
         </td>
     `
@@ -97,10 +102,12 @@ const updateTable = () => {
 const fillFields = (lightNovel) => {
     document.getElementById('nome').value = lightNovel.nome
     document.getElementById('descricao').value = lightNovel.descricao
-    document.getElementById('capitulo').value = lightNovel.capitulo
-    document.getElementById('data').value = lightNovel.data
-    document.getElementById('conteudo').value = lightNovel.conteudo
+    document.getElementById('capa').value = lightNovel.capa
     document.getElementById('nome').dataset.index = lightNovel.index
+}
+
+const editCapitulos = (index) => {
+    window.location.href = "Inserircapitulos.html?ln=" + index
 }
 
 const editlightNovel = (index) => {
@@ -116,7 +123,7 @@ const editDelete = (event) => {
         const [action, index] = event.target.id.split('-')
 
         if (action == 'edit') {
-            editlightNovel(index)
+            editCapitulos(index)
         } else {
             const lightNovel = readlightNovel()[index]
             const response = confirm(`Deseja realmente excluir o capítulo ${lightNovel.nome}`)

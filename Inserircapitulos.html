@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="css.css">
-    <script src="main.js" defer></script>
+    <script src="capitulos.js" defer></script>
     <title>MangarQ</title>
 </head>
 <body>
@@ -20,7 +20,7 @@
           </button>
         <div class="navlinkwrap">
           <span class="navlink selectedlink"><a class="link" href="index.html">Home</a></span>
-          <span class="navlink"><a class="link" href="#">Administrador</a></span>
+          <span class="navlink"><a class="link" href="admin.html">Administrador</a></span>
         </div>
       </div>
       <div class="box">
@@ -35,8 +35,8 @@
         <table class="container" id="tablelightNovel">
             <thead>
                 <tr>
-                    <th>Light Novel</th>
-                    <th>Descrição</th>
+                    <th>Capítulo</th>
+                    <th>Data Lançamento</th>
                 </tr>
             </thead>
             <tbody>
@@ -47,23 +47,18 @@
         <div class="modal" id="modal">
           <div class="modal-content">
               <header class="modal-header">
-                  <h2>Nova lightNovel</h2>
+                  <h2>Novo Capítulo</h2>
                   <span class="modal-close" id="modalClose">&#10006;</span>
               </header>
               <form id="form" class="modal-form">
-                <p class="modal-Label">
-                  Nome
-                </p>
-                  <input type="text" id="nome" data-index="new" class="modal-field" placeholder="Nome do lightNovel"
-                      required>
                   <p class="modal-Label">
-                    descrição
+                    Capítulo
                   </p>
-                  <input type="text" id="descricao" class="modal-field" placeholder="descrição" required>
+                  <input type="text" id="capitulo" class="modal-field" placeholder="capitulo" required>
                   <p class="modal-Label">
-                    Capa
+                    Conteudo
                   </p>
-                  <input type="text" id="capa" class="modal-field" placeholder="Nome do arquivo salvo na pasta imagem(inserir extensão)" required>
+                  <input type="text" name="conteudo" id="conteudo" class="modal-field" placeholder="conteudo" required>
               </form>
               <footer class="modal-footer">
                   <button id="salvar" class="button green">Salvar</button>
